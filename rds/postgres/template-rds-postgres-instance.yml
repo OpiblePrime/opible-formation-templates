@@ -1,0 +1,88 @@
+Description: AWS RDS Template for Postgres Db Instance
+Resources:
+  UrParishDb:
+    Type: AWS::RDS::DBInstance
+    Properties: 
+      # This is the amount of storage in gigibytes. This default to 5 for magnetic storage
+      AllocatedStorage: "5"
+      AllowMajorVersionUpgrade: True
+      # AssociatedRoles: 
+      #   - DBInstanceRole
+      # AutoMinorVersionUpgrade: Boolean
+      # AvailabilityZone: String
+      # The number of days for which backups are maintained. Defaults to one.
+      #BackupRetentionPeriod: 1
+      #CACertificateIdentifier: String
+      #CertificateDetails: 
+      #  CertificateDetails
+      #CertificateRotationRestart: Boolean
+      #CharacterSetName: String
+      #CopyTagsToSnapshot: Boolean
+      #CustomIAMInstanceProfile: String
+      #DBClusterIdentifier: String
+      #DBClusterSnapshotIdentifier: String
+      DBInstanceClass: db.t2.micro
+      #DBInstanceIdentifier: String
+      DBName: ur_parish
+      #DBParameterGroupName: String
+      #DBSecurityGroups: 
+      #  - String
+      #DBSnapshotIdentifier: ur-parish-snap
+      #DBSubnetGroupName: String
+      DeleteAutomatedBackups: True
+      DeletionProtection: False
+      #Domain: String
+      #DomainIAMRoleName: String
+      #EnableCloudwatchLogsExports: 
+      #  - String
+      # EnableIAMDatabaseAuthentication: Boolean
+      EnablePerformanceInsights: False
+      #Endpoint: 
+      #  Endpoint
+      # To see the difference supported instance types for specific engine versions check https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#Concepts.DBInstanceClass.Support
+      Engine: postgres
+      # To see the different engine versions supported by engine, use the cli command aws rds describe-db-engine-versions --engine postgres
+      EngineVersion: "12.15"
+      #Iops: 1000
+      #KmsKeyId: String
+      #LicenseModel: String
+      ManageMasterUserPassword: False
+      MasterUsername: <input-username>
+      # Password must be 8 chars long
+      MasterUserPassword: <input-password>
+      #MasterUserSecret: 
+      #  MasterUserSecret
+      #MaxAllocatedStorage: Integer
+      #MonitoringInterval: Integer
+      #MonitoringRoleArn: String
+      #MultiAZ: Boolean
+      #NcharCharacterSetName: String
+      #NetworkType: String
+      #OptionGroupName: String
+      #PerformanceInsightsKMSKeyId: String
+      #PerformanceInsightsRetentionPeriod: Integer
+      #Port: String
+      #PreferredBackupWindow: String
+      #PreferredMaintenanceWindow: String
+      #ProcessorFeatures: 
+      #  - ProcessorFeature
+      #PromotionTier: Integer
+      #PubliclyAccessible: False
+      #ReplicaMode: String
+      #RestoreTime: String
+      #SourceDBClusterIdentifier: String
+      #SourceDBInstanceAutomatedBackupsArn: String
+      #SourceDBInstanceIdentifier: String
+      #SourceDbiResourceId: String
+      #SourceRegion: us-east-2
+      #StorageEncrypted: Boolean
+      #StorageThroughput: Integer
+      StorageType: standard
+      Tags: 
+        - Key: "blah" 
+          Value: "blah"
+      #Timezone: String
+      #UseDefaultProcessorFeatures: Boolean
+      #UseLatestRestorableTime: Boolean
+      #VPCSecurityGroups: 
+      #  - String
